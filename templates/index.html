@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Temperature Map</title>
+    <!-- Enlace a Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Estilos CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        #graph-container {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .graph {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Análisis del calentamiento global</h1>
+    </div>
+    <div id="graph-container">
+        <h2 style="text-align: justify;">¿Qué es el calentamiento global?</h2>
+        <p style="text-align: justify;">El calentamiento global es un fenómeno climático caracterizado por un aumento gradual de la temperatura promedio de la atmósfera de la Tierra y los océanos en las últimas décadas. Este aumento de la temperatura se atribuye principalmente a la liberación de gases de efecto invernadero (GEI) en la atmósfera debido a actividades humanas, como la quema de combustibles fósiles, la deforestación y la agricultura intensiva.</p>
+        <p style="text-align: justify;">El aumento de las temperaturas globales es un fenómeno alarmante que afecta a todo el planeta. Este gráfico muestra la variación de las temperaturas promedio en diferentes países a lo largo del tiempo, la tonalidad de color en el mapa refleja las variaciones en la temperatura promedio en grados Celsius. </p>
+        <p style="text-align: justify;">Observamos patrones preocupantes de calentamiento en diversas regiones, lo que subraya la urgencia de tomar medidas para abordar el cambio climático, estas tendencias tienen consecuencias significativas en la intensificación de fenómenos climáticos extremos, la pérdida de biodiversidad y el aumento del nivel del mar, entre otros impactos devastadores.<br></p>
+        <div class="graph" id="graph1">
+            <!-- Aquí se insertará el primer gráfico -->
+            {{ graph_html1|safe }}
+         </div> 
+        <p style="text-align: justify;"><br> Este gráfico ilustra las tendencias de las temperaturas promedio en algunos países específicos a lo largo de los años, cada línea representa la evolución de la temperatura promedio en un país en particular. La variación en los colores de las líneas resalta las diferencias entre los países seleccionados. Este análisis nos ayuda a comprender mejor cómo el cambio climático afecta de manera diferencial a diferentes regiones del mundo, con implicaciones significativas para la seguridad alimentaria, la salud pública y la biodiversidad. Además, estas variaciones en las temperaturas pueden desencadenar eventos climáticos extremos, como olas de calor, sequías prolongadas y tormentas intensificadas, lo que a su vez amenaza la infraestructura, la economía y la estabilidad social en estas áreas. </p>
+        <p style="text-align: justify;"> En este grafico tenemos a países desarrollados como Rusia, Estados Unidos, Canada y China, los cuales claramente han estado en un evidente ascenso en las ultimas 3 decadas. Mientras que si evaluamos a Bolivia y a Republica Dominicana se han mantenido un poco estable. <br><br></p>
+    </div>
+    <div id="graph-container">
+        <div class="graph" id="graph2">
+            <!-- Aquí se insertará el segundo gráfico -->
+            {{ graph_html2|safe }}
+        </div>
+        <h2 style="text-align: justify;">Tendencia de la temperatura</h2>
+        <p style="text-align: justify;">El gráfico muestra la evolución de la temperatura promedio global de la superficie terrestre a lo largo del tiempo, así como la incertidumbre asociada con estas mediciones. Los datos provienen de observaciones satelitales y terrestres recopiladas desde 1750 hasta la actualidad.</p>
+        <p style="text-align: justify;">La línea central representa la temperatura promedio anual, mientras que el área sombreada entre las dos líneas muestra la incertidumbre asociada con estas mediciones. Esta incertidumbre se debe a diversos factores, como la variabilidad natural del clima y las limitaciones en la recolección de datos.</p>
+        <p style="text-align: justify;">Observamos una tendencia clara hacia el aumento de la temperatura promedio global a lo largo de los años. Esta tendencia es consistente con el fenómeno del calentamiento global, que se atribuye principalmente a la liberación de gases de efecto invernadero por actividades humanas, como la quema de combustibles fósiles y la deforestación.<br></p>
+    </div>
+
+
+    
+    <div id="graph-container">
+        <div class="graph" id="graph3">
+            <!-- Aquí se insertará el segundo gráfico -->
+            {{ graph_html3|safe }}
+        </div>
+    </div>
+
+    <div id="graph-container">
+        <h2 style="text-align: justify;"><br>Causas del calentamiento global</h2>
+            <p style="text-align: justify;"> A lo largo de los años, varias actividades humanas han contribuido al aumento de las emisiones de dióxido de carbono (CO2) en la atmósfera. Estas actividades están estrechamente relacionadas con el uso de combustibles fósiles, la producción industrial y otros procesos antropogénicos. Aquí hay una descripción general de cómo algunas de estas actividades han contribuido al aumento de las emisiones de CO2: </p>
+            <p style="text-align: justify;"><strong>1. Quema de Combustibles Fósiles (Petróleo y Gas):</strong> la principal fuente de emisiones de CO2 proviene de la quema de combustibles fósiles como el petróleo y el gas natural. Estos combustibles se utilizan principalmente para la generación de energía eléctrica, el transporte, la calefacción y la refrigeración de edificios, entre otros fines. A medida que la demanda de energía ha aumentado a lo largo de los años, especialmente con el crecimiento económico y la urbanización, las emisiones de CO2 derivadas de la quema de petróleo y gas han aumentado considerablemente. </p>
+            <p style="text-align: justify;"><strong>2. Producción de Cemento:</strong> la producción de cemento es otra fuente importante de emisiones de CO2. Durante el proceso de fabricación del cemento, se calcina la piedra caliza, liberando CO2 como subproducto. Además, la energía necesaria para calentar los hornos y otros procesos industriales asociados también contribuye a las emisiones de CO2. A medida que la demanda de cemento ha aumentado para la construcción de infraestructuras y edificios, las emisiones de CO2 de esta industria también han aumentado.</p>
+            <p style="text-align: justify;"><strong>3. Uso de Carbón:</strong> aunque el carbón ha sido reemplazado en gran medida por el petróleo y el gas natural en muchos países, sigue siendo una fuente significativa de emisiones de CO2, especialmente en regiones donde el carbón es una fuente importante de energía. La quema de carbón para la generación de electricidad y la producción de calor es una de las principales fuentes de emisiones de CO2 en sectores como la generación de energía y la industria.</p>
+            
+        <div class="graph" id="graph6">
+            <img src="{{ url_for('static', filename=graph_html6) }}" alt="Imagen">
+        </div>
+    </div>
+
+    <div id="graph-container">
+        <h2 style="text-align: justify;"><br>Principales responsables</h2>
+        <p style="text-align: justify;">Observamos que estos 10 países contribuyen significativamente a las emisiones globales de GEI, lo que subraya la importancia de su papel en el cambio climático. Es importante tener en cuenta que las emisiones de GEI pueden variar entre los países debido a factores como la población, la actividad industrial, la generación de energía y las políticas climáticas. </p>
+        <p style="text-align: justify;"> Al comprender la contribución relativa de estos países al calentamiento global, podemos identificar áreas clave donde se deben tomar medidas para reducir las emisiones y abordar el cambio climático de manera efectiva. Esto incluye la implementación de políticas climáticas ambiciosas, la transición hacia fuentes de energía renovable y la promoción de prácticas sostenibles en sectores como la agricultura, la industria y el transporte.</p>
+        <div class="graph" id="graph4">
+            <img src="{{ url_for('static', filename=graph_html4) }}" alt="Imagen">
+        </div>
+    </div>
+    
+
+    <div id="graph-container">
+        <p style="text-align: justify;"><br>Este gráfico destaca la contribución de los tres principales países emisores de gases de efecto invernadero al calentamiento global. Estos países representan una proporción significativa de las emisiones mundiales y su acción, o falta de ella, juega un papel crucial en la mitigación del calentamiento global.</p>
+        <p style="text-align: justify;"> Observamos que estos tres países son responsables de una parte considerable de las emisiones globales de gases de efecto invernadero. Sus acciones en términos de políticas climáticas, transición energética y prácticas industriales pueden tener un impacto significativo en la reducción de las emisiones a nivel mundial.</p>
+        <p style="text-align: justify;"> Dado que la cooperación internacional y el compromiso de todos los países son esenciales para abordar el cambio climático de manera efectiva, es evidente que hasta que estos tres principales emisores no tomen medidas significativas, es poco probable que se observe una mejora significativa en los esfuerzos globales para mitigar el calentamiento global.<br></p>
+        <div class="graph" id="graph_html5">
+            <!-- Aquí se insertará el segundo gráfico -->
+            {{ graph_html5|safe }}
+        </div>
+        <h1 style="text-align: justify;"><br>¿Qué soluciones hay contra el calentamiento global?</h1>
+        <p style="text-align: justify;"> Las dos mayores economías del mundo se comprometieron a adoptar medidas climáticas más ambiciosas durante la semana de alto nivel de la Asamblea General. </p>
+        <p style="text-align: justify;"> El presidente de Estados Unidos, Joe Biden, anunció que su país aumentaría significativamente su financiación internacional para el clima hasta alcanzar unos 11.400 millones de dólares al año. </p>
+        <p style="text-align: justify;"> Por su parte, el presidente de China, Xi Jinping, dijo que pondría fin a toda la financiación de centrales eléctricas de carbón en el extranjero y reorientaría el apoyo a la generación de energía verde y baja en carbono. </p>
+        <p style="text-align: justify;">  Aunque los anuncios fueron muy bien recibidos, el Secretario General de la ONU señaló que aún queda "un largo camino por recorrer" para que la Conferencia sobre el Clima de Glasgow sea un éxito que garantice "un punto de inflexión en nuestros esfuerzos colectivos para hacer frente a la crisis climática".</p>
+        <p style="text-align: justify;"> Existen diversas soluciones para abordar el calentamiento global y reducir las emisiones de gases de efecto invernadero (GEI). Estas soluciones abarcan una variedad de sectores, desde la energía y el transporte hasta la agricultura y la gestión de residuos. Aquí hay algunas soluciones clave: </p>
+        <p style="text-align: justify;"> <strong>Transición a fuentes de energía renovable:</strong> promover y adoptar fuentes de energía renovable, como la solar, eólica, hidroeléctrica y geotérmica, puede reducir significativamente las emisiones de GEI asociadas con la generación de electricidad y el consumo de combustibles fósiles </p>
+        <p style="text-align: justify;"><strong>Eficiencia energética: </strong> mejorar la eficiencia energética en edificios, industrias, transporte y aparatos eléctricos puede reducir el consumo de energía y, por lo tanto, las emisiones de CO2.  </p>
+        <p style="text-align: justify;"><strong>Transporte sostenible: </strong>  promover el uso de transporte público, vehículos eléctricos y bicicletas, así como reducir la dependencia de los vehículos de combustión interna, puede ayudar a reducir las emisiones de GEI relacionadas con el transporte.   </p>
+        <p style="text-align: justify;"><strong>Conservación forestal y reforestación: </strong> proteger los bosques existentes, detener la deforestación y llevar a cabo programas de reforestación pueden ayudar a absorber el CO2 de la atmósfera y mantener los sumideros de carbono naturales.   </p>
+        <p style="text-align: justify;"><strong> Agricultura y prácticas agrícolas sostenibles:</strong> adoptar prácticas agrícolas sostenibles, como la gestión de suelos, la agricultura de conservación y la agricultura orgánica, puede reducir las emisiones de GEI asociadas con la agricultura y mejorar la resiliencia de los sistemas alimentarios al cambio climático.  </p>
+        <p style="text-align: justify;"><strong>Gestión de residuos: </strong>  implementar estrategias de gestión de residuos, como el reciclaje, la compostaje y la recuperación de energía a partir de residuos orgánicos, puede reducir las emisiones de metano y otros gases de efecto invernadero provenientes de vertederos y plantas de tratamiento de residuos.  </p>
+        <p style="text-align: justify;"><strong>Políticas climáticas y regulaciones: </strong>  implementar políticas y regulaciones climáticas a nivel nacional e internacional, como los impuestos sobre el carbono, los sistemas de comercio de emisiones y los objetivos de reducción de emisiones, puede proporcionar incentivos económicos para reducir las emisiones y promover la innovación en tecnologías limpias.  </p>
+
+    </div>
+
+    
+
+</body>
+</html>

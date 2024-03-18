@@ -7,15 +7,16 @@ import plotly.graph_objs as go
 import plotly.tools as tls
 import seaborn as sns
 import time
+import os
 import warnings
 warnings.filterwarnings('ignore')
 
-fuentes_co2 = pd.read_excel('archivo.xlsx', index_col=0, engine='openpyxl')
+fuentes_co2 = pd.read_excel('C:/Users/josue/OneDrive/Escritorio/Josue/programas Python/PROYECTO_1/archivo.xlsx', index_col=0, engine='openpyxl')
 fuentes_co2.drop_duplicates(inplace=True)
 
 def origen_co2():
     
-    plt.figure(figsize=(20, 6))
+    plt.figure(figsize=(11, 5))
     plt.xlim(1959,2022)
 
     # Graficar cada columna
@@ -27,10 +28,16 @@ def origen_co2():
     plt.fill_between(fuentes_co2.index, fuentes_co2['Cemento'], color='lightseagreen', alpha=0.3)
 
 
-    plt.title('Evolución en las emisiones globales de CO2 por origen', fontsize=18)
+    plt.title('Evolución en las emisiones globales de CO2 por origen\n', fontsize=12)
     plt.xlabel('Año')
     plt.ylabel('Toneladas de CO2 (Miles de millones)')
     plt.legend()
 
     plt.grid(True) # Mostrar la cuadrícula
-    plt.show()
+    
+    nombre_archivo_barras_2 = 'grafico_barras_2.png'
+    ruta_archivo_barras = os.path.join('C:/Users/josue/OneDrive/Escritorio/Josue/programas Python/PROYECTO_1/static' , nombre_archivo_barras_2)
+    plt.savefig(ruta_archivo_barras)
+    plt.close()
+    
+    return ruta_archivo_barras

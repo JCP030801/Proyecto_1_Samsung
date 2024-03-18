@@ -43,13 +43,13 @@ def generar_mapa_global():
             text = countries,
             marker = dict(
                 line = dict(color = 'rgb(0,0,0)', width = 1)),
-                colorbar = dict(autotick = True, tickprefix = '', 
+                colorbar = dict( tickprefix = '', 
                 title = 'Temperatura\nPromedio,\n°C')
                 )
         ]
 
     layout = dict(
-        title = 'Temperatura promedio en todos los paises',
+        title = '',#Temperatura promedio en todos los paises
         geo = dict(
             showframe = False,
             showocean = True,
@@ -72,13 +72,15 @@ def generar_mapa_global():
             )
 
     fig = dict(data=data, layout=layout)
-    return py.iplot(fig, validate=False, filename='worldmap')
+    return py.plot(fig, output_type='div', include_plotlyjs=False)
 
 
 ######
 
 def generar_temp_promedio():
+    
     continent = ['Russia', 'United States', 'Dominican Republic', 'Canada', 'Bolivia', 'China']
+    
     years = np.unique(global_temp_country['Date'].apply(lambda x: x[:4]))
     years = list(map(int,years))
 
@@ -87,13 +89,13 @@ def generar_temp_promedio():
     years = list(map(str, years))
 
 
-    mean_temp_year_country = [ [0] * len(years) for i in range(len(continent))]
+    mean_temp_year_country = [ [0] * len(years[5:]) for i in range(len(continent))]
 
     j = 0
     for country in continent:
         all_temp_country = global_temp_country[global_temp_country['Country'] == country]
         i = 0
-        for year in years:
+        for year in years[5:]:
             mean_temp_year_country[j][i] = all_temp_country[all_temp_country['Date'].apply(
                     lambda x: x[:4]) == year]['AverageTemperature'].mean()
             i +=1
@@ -104,7 +106,7 @@ def generar_temp_promedio():
             'rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)']
     for i in range(len(continent)):
         traces.append(go.Scatter(
-            x=years,
+            x=years[5:],
             y=mean_temp_year_country[i],
             mode='lines',
             name=continent[i],
@@ -114,7 +116,8 @@ def generar_temp_promedio():
     layout = go.Layout(
         xaxis=dict(title='Año'),
         yaxis=dict(title='Temperatura promedio, °C'),
-        title='Temperatura promedio de algunos paises en especifico',)
+        title='Tendencias de las Temperaturas en Países Clave',)
 
     fig = go.Figure(data=traces, layout=layout)
-    return py.iplot(fig)
+    return py.plot(fig, output_type='div', include_plotlyjs=False)
+

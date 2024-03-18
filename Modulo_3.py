@@ -7,10 +7,11 @@ import plotly.graph_objs as go
 import plotly.tools as tls
 import seaborn as sns
 import time
+import os
 import warnings
 warnings.filterwarnings('ignore')
 
-origen_co2 = pd.read_csv('export_emissions.csv')
+origen_co2 = pd.read_csv('C:/Users/josue/OneDrive/Escritorio/Josue/programas Python/PROYECTO_1/export_emissions.csv')
 origen_co2 = origen_co2.iloc[0:64]
 origen_co2.iloc[0][0]='Fecha'
 origen_co2.columns = origen_co2.iloc[0]
@@ -48,8 +49,14 @@ def ranking_mundial_co():
     ax.set_ylabel('    ')
     ax.set_title('Ranking mundial de los principales paises emisores\nde gases de efecto invernadero en 2022', fontweight=560,  fontstyle='oblique')
 
-    return plt.show()
-
+    # Guardar el gráfico de barras como archivo de imagen en el directorio 'static'
+    nombre_archivo_barras = 'grafico_barras.png'
+    ruta_archivo_barras = os.path.join('C:/Users/josue/OneDrive/Escritorio/Josue/programas Python/PROYECTO_1/static' , nombre_archivo_barras)
+    plt.savefig(ruta_archivo_barras)
+    plt.close()
+    
+    return ruta_archivo_barras
+    
 def co2_top3():
     years = np.unique(origen_co2.index)
 
@@ -100,4 +107,5 @@ def co2_top3():
         showlegend = True)
 
     fig = go.Figure(data=data, layout=layout)
-    return py.iplot(fig)
+    #return py.iplot(fig)
+    return py.plot(fig, output_type='div', include_plotlyjs=False)

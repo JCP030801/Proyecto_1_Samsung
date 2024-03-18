@@ -10,7 +10,7 @@ import time
 import warnings
 warnings.filterwarnings('ignore')
 
-global_temp = pd.read_csv('GlobalTemperatures.csv')
+global_temp = pd.read_csv('C:/Users/josue/OneDrive/Escritorio/Josue/programas Python/PROYECTO_1/GlobalTemperatures.csv')
 remove_columns= [
        'LandMaxTemperature', 'LandMaxTemperatureUncertainty',
        'LandMinTemperature', 'LandMinTemperatureUncertainty',
@@ -78,4 +78,4 @@ def temperatura_promedio_global():
         showlegend = False)
 
     fig = go.Figure(data=data, layout=layout)
-    return py.iplot(fig)
+    return py.plot(fig, output_type='div', include_plotlyjs=False)

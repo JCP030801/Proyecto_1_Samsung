@@ -36,7 +36,7 @@ def ranking_mundial_co():
     serie_datos= pd.Series(data=Porcentaje)
     serie_datos = serie_datos.sort_values(ascending=True)
 
-    fig, ax = plt.subplots(figsize=(8,6))
+    fig, ax = plt.subplots(figsize=(10,6))
     bars = ax.barh(serie_datos.index, serie_datos.values, color ='magenta')  
     ax.set_xlim(0, 100)
 
